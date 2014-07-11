@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bower_components/react/react.js"></script>
+    <script type="text/javascript" src="../bower_components/react/JSXTransformer.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div id="app"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/jsx">
+/** @jsx React.DOM */
+
+var divStyle = {
+    position : 'relative',
+    height: '434px',
+    width: '321px',
+    margin: '0 auto'
+}
+
+var Page1 = React.createClass({
+    navToNextPage : function() {
+        this.props.onNav( 'Page2' );
+    },
+
+    render: function(){
+
+        var buttonStyle = {
+            position : 'absolute',
+            display : 'block',
+            top : 210,
+            left : 21,
+            background: "#fff url(img/1.png) -21px -210px no-repeat",
+            height: 52,
+            lineHeight: 52,
+            width: 278
+        }
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12 text-center">
+                    <div style={divStyle}>
+                        <img src="img/1.png" />
+                        <a
+                            href="#" className="btn"
+                            onClick={ this.navToNextPage }
+                            style={buttonStyle}
+                        >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+var Page2 = React.createClass({
+    navToNextPage : function() {
+        this.props.onNav( 'Page3' );
+    },
+
+    render: function(){
+        var buttonStyle = {
+            position : 'absolute',
+            display : 'block',
+            top : 358,
+            left : 109,
+            background: "#fff url(img/2.png) -109px -358px no-repeat",
+            height: 32,
+            lineHeight: 32,
+            width: 132
+        }
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12">
+                    <div style={divStyle}>
+                        <img src="img/2.png" />
+                        <a
+                            href="#" className="btn"
+                            onClick={ this.navToNextPage }
+                            style={buttonStyle}
+                        >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+var Page3 = React.createClass({
+    navToNextPage : function() {
+        this.props.onNav( 'Page4' );
+    },
+
+    render: function(){
+        var buttonStyle = {
+            position : 'absolute',
+            display : 'block',
+            top : 275,
+            left : 112,
+            background: "#fff url(img/3.png) -112px -275px no-repeat",
+            height: 32,
+            lineHeight: 32,
+            width: 96
+        }
+        var inputStyle = {
+            position : 'absolute',
+            display : 'block',
+            top : 225,
+            left : 39,
+            height: 32,
+            lineHeight: 32,
+            width: 251,
+            textAlign : 'center',
+            fontSize : '150%',
+            background : '#fff',
+            border: 0,
+            borderBottom: '2px dashed #333',
+            color: '#333'
+        }
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12">
+                    <div style={divStyle}>
+                        <img src="img/3.png" />
+                        <input
+                            type="text" 
+                            defaultValue="johndoe@gmail.com" 
+                            style={inputStyle}
+                            placeholder="Your Email Address..." />
+                        <a
+                            href="#" className="btn"
+                            onClick={ this.navToNextPage }
+                            style={buttonStyle}>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+var Page4 = React.createClass({
+    navToNextPage : function() {
+        this.props.onNav( 'Page5' );
+    },
+
+    render: function(){
+        var buttonStyle = {
+            position : 'absolute',
+            display : 'block',
+            top : 371,
+            left : 86,
+            background: "#fff url(img/4.png) -86px -371px no-repeat",
+            height: 32,
+            lineHeight: 32,
+            width: 149
+        }
+        var selectStyle = {
+            position : 'absolute',
+            display : 'block',
+            height: 25,
+            lineHeight: 25,
+            width: 204,
+            textAlign : 'left',
+            fontSize : '125%',
+            background : '#fff',
+            border: 0,
+            borderBottom: '2px dashed #333',
+            color: '#333'
+        }
+
+        var userTypeSelectStyle = $.extend( {
+            top : 275,
+            left : 63,
+        }, selectStyle );
+
+        var userJobSelectStyle = $.extend( {
+            top : 325,
+            left : 47,
+        }, selectStyle );
+
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12">
+                    <div style={divStyle}>
+                        <img src="img/4.png" />
+                        <select
+                            style={userTypeSelectStyle}>
+                            <option>an entreprenuer</option>
+                            <option>a small business owner</option>
+                            <option>something else</option>
+                        </select>
+
+                        <select
+                            style={userJobSelectStyle}>
+                            <option>hiring a developer</option>
+                            <option>hiring a designer</option>
+                            <option>looking for an investor</option>
+                        </select>
+
+                        <a
+                            href="#" className="btn"
+                            onClick={ this.navToNextPage }
+                            style={buttonStyle}>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+var Page5 = React.createClass({
+
+    render: function(){
+
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12 text-center">
+                    <h2>Thank You!</h2>
+                </div>
+            </div>
+        );
+    }
+})
+
+var App = React.createClass({
+
+    getInitialState: function(){
+        return { focused: 0 };
+    },
+
+    clicked: function(index){
+        this.setState( { focused: index } );
+    },
+
+    navigateTo: function( page ) {
+        this.setState( { focused: page } );
+    },
+
+    render: function() {
+        var self = this;
+        var currPage = this.state.focused;
+        if( !isNaN( currPage ) )
+        {
+            currPage = this.props.items[ this.state.focused ];
+        }
+        var page = allPages[ currPage ];
+        return (
+            <div>
+                <ul className="hide">{ this.props.items.map( function( m, index ) {
+        
+                    var style = '';
+        
+                    if(self.state.focused == index){
+                        style = 'focused';
+                    }
+        
+                    return <li className={style} onClick={self.navigateTo.bind(self, m)}>{m}</li>;
+        
+                } ) }
+                        
+                </ul>
+                <br/><br/>
+                <page onNav={ this.navigateTo } />               
+            </div>
+        );
+
+    }
+});
+
+var allPages = {
+    Page1: Page1,
+    Page2: Page2,
+    Page3: Page3,
+    Page4: Page4,
+    Page5: Page5,
+};
+
+
+// Render the menu component on the page, and pass an array with menu options
+React.renderComponent(
+    <App items={ Object.keys( allPages ) } />,
+    document.getElementById( 'app' )
+);
+</script>
+
+</body>
+</html>

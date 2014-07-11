@@ -1,0 +1,11 @@
+# osx noise
+.DS_Store
+profile
+
+# svn & cvs
+.svn
+CVS
+
+node_modules/*
+bower_components/*/src/*
+!bower_components/*/.bower.json
