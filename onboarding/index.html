@@ -44,7 +44,7 @@ var Page1 = React.createClass({
             left : 21,
             background: "#fff url(img/1.png) -21px -210px no-repeat",
             height: 52,
-            lineHeight: 52,
+            lineHeight: '52px',
             width: 278
         }
         return(
@@ -78,7 +78,7 @@ var Page2 = React.createClass({
             left : 109,
             background: "#fff url(img/2.png) -109px -358px no-repeat",
             height: 32,
-            lineHeight: 32,
+            lineHeight: '32px',
             width: 132
         }
         return(
@@ -112,7 +112,7 @@ var Page3 = React.createClass({
             left : 112,
             background: "#fff url(img/3.png) -112px -275px no-repeat",
             height: 32,
-            lineHeight: 32,
+            lineHeight: '32px',
             width: 96
         }
         var inputStyle = {
@@ -121,7 +121,7 @@ var Page3 = React.createClass({
             top : 225,
             left : 39,
             height: 32,
-            lineHeight: 32,
+            lineHeight: '32px',
             width: 251,
             textAlign : 'center',
             fontSize : '150%',
@@ -165,14 +165,14 @@ var Page4 = React.createClass({
             left : 86,
             background: "#fff url(img/4.png) -86px -371px no-repeat",
             height: 32,
-            lineHeight: 32,
+            lineHeight: '32px',
             width: 149
         }
         var selectStyle = {
             position : 'absolute',
             display : 'block',
             height: 25,
-            lineHeight: 25,
+            lineHeight: '25px',
             width: 204,
             textAlign : 'left',
             fontSize : '125%',
@@ -261,7 +261,7 @@ var App = React.createClass({
         var page = allPages[ currPage ];
         return (
             <div>
-                <ul className="hide">{ this.props.items.map( function( m, index ) {
+                <ul>{ this.props.items.map( function( m, index ) {
         
                     var style = '';
         
