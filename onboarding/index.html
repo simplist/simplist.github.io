@@ -104,7 +104,7 @@ var Page2 = React.createClass({
 
 var Page3 = React.createClass({
     navToNextPage : function() {
-        this.props.onNav( 'Page3_1' );
+        this.props.onNav( 'Page3_5' );
     },
 
     render: function(){
@@ -155,7 +155,7 @@ var Page3 = React.createClass({
     }
 })
 
-var Page3_1 = React.createClass({
+var Page3_5 = React.createClass({
     navToNextPage : function() {
         this.props.onNav( 'Page4' );
     },
@@ -179,7 +179,7 @@ var Page3_1 = React.createClass({
 
 var Page4 = React.createClass({
     navToNextPage : function() {
-        this.props.onNav( 'Page5' );
+        this.props.onNav( 'Page4_5' );
     },
 
     render: function(){
@@ -248,6 +248,31 @@ var Page4 = React.createClass({
     }
 })
 
+var Page4_5 = React.createClass({
+    navToNextPage : function() {
+        this.props.onNav( 'Page5' );
+    },
+
+    render: function(){
+        return(
+            <div className="row text-center">
+                <div className="col-sm-12 text-center">
+                    <div style={divStyle}>
+                        <a
+                            href="#"
+                            onClick={ this.navToNextPage }
+                        >
+                        <img src="img/4.5.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+
+
 var Page5 = React.createClass({
 
     render: function(){
@@ -307,12 +332,15 @@ var App = React.createClass({
     }
 });
 
+
+
 var allPages = {
     Page1: Page1,
     Page2: Page2,
     Page3: Page3,
-    Page3_1: Page3_1,
+    Page3_5: Page3_5,
     Page4: Page4,
+    Page4_5: Page4_5,
     Page5: Page5,
 };
 
