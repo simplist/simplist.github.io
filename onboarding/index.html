@@ -68,6 +68,42 @@ var Page1 = React.createClass({
     }
 })
 
+var ToggleButton = React.createClass({
+    getInitialState: function(){
+        return { on: true };
+    },
+
+    toggleButton : function() {
+        this.setState( { on: !this.state.on } );
+    },
+
+    render : function() {
+
+        var bg = "#fff url(img/2.png) -194px -305px no-repeat";
+        if( !this.state.on ) {
+            bg = "#fff url(img/2.png) -194px -169px no-repeat";
+        }
+
+        var style = {
+            position : 'absolute',
+            display : 'block',
+            top : this.props.top,
+            left : this.props.left,
+            background: bg,
+            height: 32,
+            lineHeight: '32px',
+            width: 110
+        };
+        return(
+            <a
+                href="#" className="btn"
+                onClick={ this.toggleButton }
+                style={style}
+            ></a>
+        );
+    }
+})
+
 var Page2 = React.createClass({
     navToNextPage : function() {
         this.props.onNav( 'Page3' );
@@ -84,6 +120,8 @@ var Page2 = React.createClass({
             lineHeight: '32px',
             width: 132
         }
+
+
         return(
             <div className="row text-center">
                 <div className="col-sm-12">
@@ -95,6 +133,9 @@ var Page2 = React.createClass({
                             style={buttonStyle}
                         >
                         </a>
+                        <ToggleButton top={214} left={193} />
+                        <ToggleButton top={258} left={193} />
+                        <ToggleButton top={304} left={193} />
                     </div>
                 </div>
             </div>
